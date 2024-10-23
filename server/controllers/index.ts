@@ -1,1 +1,1 @@
-export * from "./tableController/allTables";
+ export * from "./tableController/allTables";

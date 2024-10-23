@@ -1,16 +1,16 @@
-import {Request, Response} from "express";
-import {tablesDb} from "../../db/db";
-import {RequestWithBody, RequestWthParams, RequestWthParamsAndBody} from "../../models/request.model";
-import {CreateTable, TableURIModel, UpdateTable} from "../../models/tables/table.model";
+ import {Request, Response} from "express";
+ import {tablesDb} from "../../db/db";
+ import {RequestWithBody, RequestWthParams, RequestWthParamsAndBody} from "../../models/request.model";
+ import {CreateTable, TableURIModel, UpdateTable} from "../../models/tables/table.model";
 
-export const getAllTables = (req: Request, res: Response) => {
+ export const getAllTables = (req: Request, res: Response) => {
     res.status(200).json(tablesDb);
 };
 
-export const getTableById = (
+ export const getTableById = (
     req: RequestWthParams<TableURIModel>,
     res: Response
-) => {
+ ) => {
     const table = tablesDb.find(table => table.id === +req.params.id)
 
     if(!table) {
@@ -20,7 +20,7 @@ export const getTableById = (
     res.status(200).json(table);
 }
 
-export const createTable = (req: Request, res: Response) => {
+ export const createTable = (req: Request, res: Response) => {
     /**id will be unique after connect*/
     const newTable: CreateTable = {
         id: +(new Date()),
@@ -32,7 +32,7 @@ export const createTable = (req: Request, res: Response) => {
     res.status(201).json({message: 'Table successfully created'});
 };
 
-export const updateTableInfo = (
+ export const updateTableInfo = (
     req: RequestWthParamsAndBody<TableURIModel, UpdateTable>,
     res: Response
     ) => {
@@ -53,8 +53,8 @@ export const updateTableInfo = (
     res.status(201).json({message: 'Table successfully updated'});
 }
 
-export const deleteTable = (
+ export const deleteTable = (
     req: RequestWthParams<TableURIModel>,
     res: Response) => {
     tablesDb.splice(tablesDb.findIndex(table => table.id === +req.params.id), 1);
-}
+ }

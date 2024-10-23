@@ -1,6 +1,6 @@
-import {Table} from "../models/tables/table.model";
+ import {Table} from "../models/tables/table.model";
 
-export const tablesDb: Table[] = [
+ export const tablesDb: Table[] = [
     {
         id: 1,
         number: 1,
