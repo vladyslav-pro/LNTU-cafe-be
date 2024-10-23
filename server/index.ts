@@ -1,10 +1,10 @@
-import {app} from "./app/app";
+    import {app} from "./app/app";
 
-const port = process.env.port || 3000;
+    const port = process.env.port || 3000;
 
-const startApp = () => {
-    app.listen(port, () => {
-            console.info(`port is run on port ${port}`);
-    })
-}
-startApp();
+    const startApp = () => {
+        app.listen(port, () => {
+                console.info(`port is run on port ${port}`);
+        })
+    }
+    startApp();
