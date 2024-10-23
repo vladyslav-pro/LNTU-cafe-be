@@ -8,6 +8,7 @@ export const apiRoutes = () => {
     router.get('/tables/:id', getTableById);
     router.post('/tables', createTable);
     router.put('/tables/:id', updateTableInfo);
+
     router.delete('/tables/:id', deleteTable);
 
     router.get('/user', (req, res) => {
